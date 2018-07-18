@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Last Man Stnading</string>
+    <string name="button">Button</string>
+    <string name="no_hint">Reg no</string>
+    <string name="edittxt">EditTxt</string>
+    <string name="rules">
+        "Rules: \n"
+        "Genaral instructions"
+    </string>
+    <string name="textview">TextView</string>
+
+    <string name="qr_code">QR Code</string>
+    <string name="unlock">unlock</string>
+    <string name="unlock_key">unlock key</string>
+    <string name="finshed">finshed</string>
+
+
+</resources>

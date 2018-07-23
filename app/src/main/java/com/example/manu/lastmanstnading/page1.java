@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -18,6 +19,7 @@ public class page1 extends AppCompatActivity {
         Login = (Button)findViewById(R.id.btn1);
 
         Password = (EditText)findViewById(R.id.etxt1);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

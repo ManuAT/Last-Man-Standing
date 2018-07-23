@@ -23,7 +23,8 @@
         <activity android:name=".unlock" />
         <activity android:name=".qrcode" />
         <activity android:name=".timeset" />
-        <activity android:name=".fnished"></activity>
+        <activity android:name=".fnished" />
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>

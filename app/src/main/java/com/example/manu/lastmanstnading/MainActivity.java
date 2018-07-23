@@ -12,7 +12,7 @@ import com.example.manu.lastmanstnading.R;
 
 import java.util.Locale;
 
-public class timeset extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
     private static final long START_TIME_IN_MILLIS = 7200000;
 
     private TextView mTextViewCountDown;
@@ -29,7 +29,7 @@ public class timeset extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timeset);
+        setContentView(R.layout.activity_main);
         //setContentView(R.layout.activity_page2);
 
         mTextViewCountDown = findViewById(R.id.txt2);
@@ -58,11 +58,11 @@ public class timeset extends AppCompatActivity {
         temp1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(timeset.this,page2.class);
+                Intent intent = new Intent(MainActivity.this,unlock.class);
                 startActivity(intent);
             }
         });
-
+        startTimer();
         updateCountDownText();
     }
 

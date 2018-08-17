@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     private Button mButtonReset;
     private  Button uk1;
     private  Button uk2;
+    private  Button finish;
+    private  Button qrbtn;
+    private  Button homebtn;
+    RelativeLayout main;
     RelativeLayout home;
     RelativeLayout hint;
     RelativeLayout map;
@@ -30,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     RelativeLayout unlock1;
     RelativeLayout unlock2;
     RelativeLayout finshed;
-
+    RelativeLayout qrcode;
 
     private CountDownTimer mCountDownTimer;
 
@@ -51,14 +55,20 @@ public class MainActivity extends AppCompatActivity {
         mButtonReset = findViewById(R.id.button_reset);
         uk1 = findViewById(R.id.sbtn);
         uk2 = findViewById(R.id.unkey);
+        finish= findViewById(R.id.finish);
+        unlock_key = findViewById(R.id.untxt);
+        qrbtn = findViewById(R.id.qbtn);
+        homebtn = findViewById(R.id.homebtn);
         home =(RelativeLayout)findViewById(R.id.home);
         hint =(RelativeLayout)findViewById(R.id.hint);
         map =(RelativeLayout)findViewById(R.id.map);
         video = (RelativeLayout)findViewById(R.id.video);
         unlock1= (RelativeLayout)findViewById(R.id.unlock1);
         unlock2 = (RelativeLayout)findViewById(R.id.unlock2);
+        main = (RelativeLayout)findViewById(R.id.main);
         finshed = (RelativeLayout)findViewById(R.id.finished);
-        unlock_key = findViewById(R.id.untxt);
+        qrcode = (RelativeLayout)findViewById(R.id.qrcode);
+
 
         mButtonStartPause.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +101,25 @@ public class MainActivity extends AppCompatActivity {
                 unlock1.setVisibility(View.VISIBLE);
             }
         });
+        homebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                home.setVisibility(View.VISIBLE);
+                unlock1.setVisibility(View.GONE);
+                unlock2.setVisibility(View.GONE);
+                hint.setVisibility(View.GONE);
+                map.setVisibility(View.GONE);
+                video.setVisibility(View.GONE);
+                qrcode.setVisibility(View.GONE);
+            }
+        });
+        qrbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                home.setVisibility(View.GONE);
+                qrcode.setVisibility(View.VISIBLE);
+            }
+        });
         uk2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -98,6 +127,15 @@ public class MainActivity extends AppCompatActivity {
                 {
                 unlock1.setVisibility(View.GONE);
                 unlock2.setVisibility(View.VISIBLE);}
+            }
+        });
+        finish.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                    main.setVisibility(View.GONE);
+                    home.setVisibility(View.GONE);
+                    finshed.setVisibility(View.VISIBLE);
             }
         });
         startTimer();

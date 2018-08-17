@@ -105,7 +105,7 @@
         android:layout_weight=".5"
         android:background="@color/colorPrimary"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:visibility="gone">
 
         <Button
             android:id="@+id/sbtn"
@@ -253,7 +253,7 @@
         android:background="@color/colorAccent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone"
+        android:visibility="visible"
         android:orientation="vertical">
 
         <Button
@@ -282,13 +282,22 @@
             tools:visibility="visible" />
 
         <Button
-            android:id="@+id/tempbtn"
+            android:id="@+id/tplus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginBottom="61dp"
-            android:text="Button" />
+            android:layout_alignStart="@+id/button_start_pause"
+            android:layout_marginBottom="65dp"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/tminus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/button_reset"
+            android:layout_marginBottom="74dp"
+            android:text="-" />
     </RelativeLayout>
 
     <RelativeLayout

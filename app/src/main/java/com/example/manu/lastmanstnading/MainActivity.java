@@ -16,7 +16,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     private static final long START_TIME_IN_MILLIS = 7200000;
-
+    private static final long add_time = 300000;
     private TextView mTextViewCountDown;
     private TextView unlock_key;
     private Button mButtonStartPause;
@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
     private  Button finish;
     private  Button qrbtn;
     private  Button homebtn;
+    private Button  tplus;
+    private Button  tminus;
     RelativeLayout main;
     RelativeLayout home;
     RelativeLayout hint;
@@ -59,6 +61,8 @@ public class MainActivity extends AppCompatActivity {
         unlock_key = findViewById(R.id.untxt);
         qrbtn = findViewById(R.id.qbtn);
         homebtn = findViewById(R.id.homebtn);
+        tplus = findViewById(R.id.tplus);
+        tminus = findViewById(R.id.tminus);
         home =(RelativeLayout)findViewById(R.id.home);
         hint =(RelativeLayout)findViewById(R.id.hint);
         map =(RelativeLayout)findViewById(R.id.map);
@@ -111,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 map.setVisibility(View.GONE);
                 video.setVisibility(View.GONE);
                 qrcode.setVisibility(View.GONE);
+                unlock_key.setText("");
             }
         });
         qrbtn.setOnClickListener(new View.OnClickListener() {
@@ -126,6 +131,7 @@ public class MainActivity extends AppCompatActivity {
                 if(unlock_key.getText().toString().equals("777"))
                 {
                 unlock1.setVisibility(View.GONE);
+                unlock_key.setText("");
                 unlock2.setVisibility(View.VISIBLE);}
             }
         });
@@ -133,11 +139,26 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                    main.setVisibility(View.GONE);
-                    home.setVisibility(View.GONE);
-                    finshed.setVisibility(View.VISIBLE);
+                main.setVisibility(View.GONE);
+                home.setVisibility(View.GONE);
+                finshed.setVisibility(View.VISIBLE);
             }
         });
+        tplus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                plus_time();
+            }
+        });
+        tminus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                minus_time();
+            }
+        });
+
         startTimer();
         updateCountDownText();
 
@@ -171,6 +192,18 @@ public class MainActivity extends AppCompatActivity {
         mTimerRunning = false;
         mButtonStartPause.setText("Start");
         mButtonReset.setVisibility(View.VISIBLE);
+    }
+    private void plus_time(){
+        pauseTimer();
+        mTimeLeftInMillis = mTimeLeftInMillis + add_time;
+        startTimer();
+
+    }
+    private  void minus_time(){
+        pauseTimer();
+        mTimeLeftInMillis = mTimeLeftInMillis - add_time;
+        startTimer();
+
     }
 
     private void resetTimer() {
